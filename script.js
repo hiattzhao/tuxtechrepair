@@ -81,6 +81,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 submitBtn.textContent = 'Sending...';
                 submitBtn.disabled = true;
 
+                // Handle multi-select checkboxes for skills and equipment
+                // Ensure they are sent as a single comma-separated list
+                const skills = formData.getAll('skills');
+                if (skills.length > 0) {
+                    formData.delete('skills');
+                    formData.append('skills', skills.join(', '));
+                }
+
+                const equipment = formData.getAll('equipment');
+                if (equipment.length > 0) {
+                    formData.delete('equipment');
+                    formData.append('equipment', equipment.join(', '));
+                }
+
                 // Add form identifier and configuration
                 formData.append('_subject', formId === 'volunteer-form-container' ? 'New Volunteer Application' : 'Equipment Donation Offer');
                 formData.append('_captcha', 'false');
