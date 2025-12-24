@@ -81,28 +81,33 @@ document.addEventListener('DOMContentLoaded', () => {
                 submitBtn.textContent = 'Sending...';
                 submitBtn.disabled = true;
 
-                // Handle multi-select checkboxes for skills and equipment
-                // Ensure they are sent as a single comma-separated list
+                // Create JSON object from FormData
+                const data = Object.fromEntries(formData.entries());
+
+                // Manually handle multi-select arrays to ensure they are comma-separated strings
+                // Object.fromEntries only keeps the last value for duplicate keys
                 const skills = formData.getAll('skills');
                 if (skills.length > 0) {
-                    formData.delete('skills');
-                    formData.append('skills', skills.join(', '));
+                    data.skills = skills.join(', ');
                 }
 
                 const equipment = formData.getAll('equipment');
                 if (equipment.length > 0) {
-                    formData.delete('equipment');
-                    formData.append('equipment', equipment.join(', '));
+                    data.equipment = equipment.join(', ');
                 }
 
-                // Add form identifier and configuration
-                formData.append('_subject', formId === 'volunteer-form-container' ? 'New Volunteer Application' : 'Equipment Donation Offer');
-                formData.append('_captcha', 'false');
-                formData.append('_template', 'table');
+                // Add configuration fields
+                data._subject = formId === 'volunteer-form-container' ? 'New Volunteer Application' : 'Equipment Donation Offer';
+                data._captcha = 'false';
+                data._template = 'table';
 
                 fetch('https://formsubmit.co/ajax/hiattzhao@gmail.com', {
                     method: 'POST',
-                    body: formData
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(data)
                 })
                     .then(response => response.json())
                     .then(data => {
