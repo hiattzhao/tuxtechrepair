@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TuxTechRepair | Sustainable Tech for Everyone</title>
+    <meta name="description"
+        content="TuxTechRepair repairs used computers and donates them to those in need. Join our mission to bridge the digital divide.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <a href="#" class="logo">TuxTech<span class="accent">Repair</span></a>
+            <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+                <span class="sr-only">Menu</span>
+                <div class="hamburger"></div>
+            </button>
+            <nav>
+                <ul id="primary-navigation" class="primary-navigation flex">
+                    <li><a href="#mission">Our Mission</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#involved">Get Involved</a></li>
+                    <li><a href="#contact" class="btn btn-primary">Donate Tech</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-background">
+                <img src="images/hero.png" alt="Electronics repair workbench" loading="eager">
+                <div class="overlay"></div>
+            </div>
+            <div class="container hero-content">
+                <h1 class="fade-in">Reviving Tech,<br>Empowering <span class="gradient-text">People.</span></h1>
+                <p class="fade-in delay-1">We repair retired computers and give them a second life with those who need
+                    them most. Bridging the digital divide, one device at a time.</p>
+                <div class="hero-actions fade-in delay-2">
+                    <a href="#involved" class="btn btn-primary">Get Involved</a>
+                    <a href="#mission" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="mission" class="section mission">
+            <div class="container flow">
+                <h2 class="section-title">Why We Exist</h2>
+                <div class="mission-grid">
+                    <div class="mission-card fade-in-scroll">
+                        <h3>The E-Waste Problem</h3>
+                        <p>Millions of usable computers are discarded every year, contributing to a massive global
+                            e-waste crisis.</p>
+                    </div>
+                    <div class="mission-card fade-in-scroll">
+                        <h3>The Digital Divide</h3>
+                        <p>Meanwhile, countless students and families lack access to the digital tools necessary for
+                            education and employment.</p>
+                    </div>
+                    <div class="mission-card fade-in-scroll">
+                        <h3>Our Solution</h3>
+                        <p>We bridge this gap by refurbishing donated hardware with open-source software and placing it
+                            where it matters.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="section services">
+            <div class="container flow">
+                <h2 class="section-title">What We Do</h2>
+                <div class="services-grid">
+                    <div class="service-card glass fade-in-scroll">
+                        <div class="icon-container">
+                            <img src="images/repair.png" alt="Repair icon">
+                        </div>
+                        <h3>Expert Repair</h3>
+                        <p>Our volunteer technicians professionally diagnose, clean, and repair donated hardware. We
+                            prioritize data security with military-grade wiping.</p>
+                    </div>
+                    <div class="service-card glass fade-in-scroll">
+                        <div class="icon-container">
+                            <img src="images/donate.png" alt="Donation icon">
+                        </div>
+                        <h3>Community Donation</h3>
+                        <p>Restored devices are distributed to local schools, non-profits, and families in need,
+                            completely free of charge.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="involved" class="section cta-section">
+            <div class="container text-center flow fade-in-scroll">
+                <h2>Join the Movement</h2>
+                <p>Whether you have old tech to donate, skills to share, or simply want to support the cause, there is a
+                    place for you at TuxTechRepair.</p>
+                <div class="cta-buttons">
+                    <button id="btn-volunteer" class="btn btn-primary big">Volunteer Your Skills</button>
+                    <button id="btn-donate" class="btn btn-outline big">Donate Equipment</button>
+                </div>
+
+                <div id="volunteer-form-container" class="volunteer-form-container hidden">
+                    <form class="volunteer-form glass">
+                        <h3>Volunteer Sign Up</h3>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Jane Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required placeholder="jane@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="skills">Skills (Check all that apply)</label>
+                            <div class="checkbox-group">
+                                <label><input type="checkbox" name="skills" value="repair"> Hardware Repair</label>
+                                <label><input type="checkbox" name="skills" value="software"> Software
+                                    Installation</label>
+                                <label><input type="checkbox" name="skills" value="logistics"> Logistics/Driving</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Why do you want to join?</label>
+                            <textarea id="message" name="message" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit Application</button>
+                    </form>
+                </div>
+
+                <div id="donate-form-container" class="expandable-form-container hidden">
+                    <form class="volunteer-form glass">
+                        <h3>Donate Equipment</h3>
+                        <div class="form-group">
+                            <label for="donate-name">Name / Organization</label>
+                            <input type="text" id="donate-name" name="donate-name" required placeholder="John Smith">
+                        </div>
+                        <div class="form-group">
+                            <label for="donate-email">Email</label>
+                            <input type="email" id="donate-email" name="donate-email" required
+                                placeholder="john@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="equipment-type">Equipment Type</label>
+                            <div class="checkbox-group">
+                                <label><input type="checkbox" name="equipment" value="laptop"> Laptop</label>
+                                <label><input type="checkbox" name="equipment" value="desktop"> Desktop/Tower</label>
+                                <label><input type="checkbox" name="equipment" value="peripheral">
+                                    Monitor/Peripherals</label>
+                                <label><input type="checkbox" name="equipment" value="parts"> Components/Parts</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="equipment-desc">Description of Items</label>
+                            <textarea id="equipment-desc" name="equipment-desc" rows="6"
+                                placeholder="e.g., 2018 Dell XPS, requires new battery..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Schedule Drop-off</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact" class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="#" class="logo">TuxTech<span class="accent">Repair</span></a>
+                <p>Open Source. Open Hearts.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Organization</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Financials</a></li>
+                    <li><a href="#">Partners</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p>hello@tuxtechrepair.org</p>
+                <p>123 Linux Lane, Tech City</p>
+            </div>
+        </div>
+        <div class="container copyright">
+            <p>&copy; 2025 TuxTechRepair Non-Profit. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
