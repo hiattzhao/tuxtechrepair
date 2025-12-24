@@ -429,6 +429,37 @@ p {
     margin-inline: auto;
 }
 
+/* About Us Dropdown */
+.dropdown-message {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 250px;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+    background: rgba(15, 23, 42, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    transition: all 0.3s ease;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dropdown-message.hidden {
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+}
+
+.dropdown-message p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: var(--clr-text-main);
+    margin: 0;
+}
+
 /* Animations */
 .fade-in {
     opacity: 0;

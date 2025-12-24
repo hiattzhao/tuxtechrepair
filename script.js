@@ -128,4 +128,34 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize toggles for Volunteer and Donate forms
     toggleForm('btn-volunteer', 'volunteer-form-container', 'donate-form-container');
     toggleForm('btn-donate', 'donate-form-container', 'volunteer-form-container');
+
+    // Generic Dropdown Toggle
+    const toggleDropdown = (linkId, messageId) => {
+        const link = document.getElementById(linkId);
+        const message = document.getElementById(messageId);
+
+        if (link && message) {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                // Close other open dropdowns (optional, but good UX)
+                document.querySelectorAll('.dropdown-message').forEach(el => {
+                    if (el.id !== messageId) el.classList.add('hidden');
+                });
+                message.classList.toggle('hidden');
+            });
+
+            // Close when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!link.contains(e.target) && !message.contains(e.target)) {
+                    message.classList.add('hidden');
+                }
+            });
+        }
+    };
+
+    toggleDropdown('about-us-link', 'about-us-message');
+    toggleDropdown('financials-link', 'financials-message');
+    toggleDropdown('partners-link', 'partners-message');
+    toggleDropdown('privacy-link', 'privacy-message');
+    toggleDropdown('tos-link', 'tos-message');
 });
