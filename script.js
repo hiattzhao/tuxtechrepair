@@ -81,19 +81,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 submitBtn.textContent = 'Sending...';
                 submitBtn.disabled = true;
 
-                // Create JSON object from FormData
-                const data = Object.fromEntries(formData.entries());
-
-                // Manually handle multi-select arrays to ensure they are comma-separated strings
-                // Object.fromEntries only keeps the last value for duplicate keys
-                const skills = formData.getAll('skills');
-                if (skills.length > 0) {
-                    data.skills = skills.join(', ');
-                }
-
-                const equipment = formData.getAll('equipment');
-                if (equipment.length > 0) {
-                    data.equipment = equipment.join(', ');
+                // Convert FormData to JSON object, handling duplicate keys as arrays
+                const data = {};
+                for (const [key, value] of formData.entries()) {
+                    if (data[key]) {
+                        if (!Array.isArray(data[key])) {
+                            data[key] = [data[key]];
+                        }
+                        data[key].push(value);
+                    } else {
+                        data[key] = value;
+                    }
                 }
 
                 // Add configuration fields
