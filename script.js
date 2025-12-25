@@ -112,6 +112,14 @@ document.addEventListener('DOMContentLoaded', () => {
                         alert('Thank you for your submission, we\'ll be in touch soon!');
                         form.classList.add('hidden');
                         e.target.reset();
+
+                        // Scroll to Join the Movement section
+                        const involvedSection = document.getElementById('involved');
+                        if (involvedSection) {
+                            setTimeout(() => {
+                                involvedSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            }, 300);
+                        }
                     })
                     .catch(error => {
                         console.error('Error:', error);
