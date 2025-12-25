@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 data._captcha = 'false';
                 data._template = 'table';
 
-                fetch('https://formsubmit.co/ajax/hiattzhao@gmail.com', {
+                fetch('https://formsubmit.co/ajax/e78a3eecd44f450fb81e033a2269a425', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
