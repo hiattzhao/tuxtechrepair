@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 })
                     .then(response => response.json())
                     .then(data => {
-                        alert('Thank you! Your submission has been received.');
+                        alert('Thank you for your submission, we\'ll be in touch soon!');
                         form.classList.add('hidden');
                         e.target.reset();
                     })
