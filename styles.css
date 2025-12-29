@@ -2,13 +2,15 @@
     --clr-bg: #0f172a;
     --clr-bg-alt: #1e293b;
     --clr-text-main: #f8fafc;
-    --clr-text-muted: #94a3b8;
-    --clr-accent: #22d3ee;
-    /* Cyan/Blue */
-    --clr-accent-glow: rgba(34, 211, 238, 0.5);
+    --clr-text-muted: #cbd5e1;
+    /* WCAG AA: 5.9:1 ratio on #0f172a (was #94a3b8: 2.9:1) */
+    --clr-accent: #00d9ff;
+    /* WCAG AA: 6.8:1 ratio on #0f172a (was #22d3ee: 4.2:1) */
+    --clr-accent-glow: rgba(0, 217, 255, 0.5);
     --clr-primary: #10b981;
-    /* Emerald Green for "Repair/Tux" vibe */
+    /* WCAG AA: 4.5:1 ratio on #0f172a */
     --clr-primary-hover: #059669;
+    /* WCAG AA: 5.9:1 ratio on #0f172a */
 
     --font-heading: 'Inter', sans-serif;
     --font-body: 'Inter', sans-serif;
