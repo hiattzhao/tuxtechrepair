@@ -423,6 +423,24 @@ p {
     color: var(--clr-text-main);
 }
 
+/* Social icon hover/focus for footer (BlueSky) */
+.footer .social-links {
+    display: inline-block;
+}
+
+.footer .social-links img {
+    transition: transform 0.18s ease, filter 0.18s ease, box-shadow 0.18s ease;
+    border-radius: 50%;
+    will-change: transform, filter;
+}
+
+.footer .social-links img:hover,
+.footer .social-links a:focus img {
+    transform: translateY(-3px) scale(1.08);
+    box-shadow: 0 0 20px rgba(90, 200, 255, 0.4), 0 0 40px rgba(43, 127, 255, 0.25), 0 10px 30px rgba(43, 127, 255, 0.2);
+    filter: drop-shadow(0 0 15px rgba(90, 200, 255, 0.35)) drop-shadow(0 6px 12px rgba(43, 127, 255, 0.2));
+}
+
 .copyright {
     text-align: center;
     padding-top: 2rem;
