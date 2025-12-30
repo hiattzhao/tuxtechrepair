@@ -434,9 +434,13 @@ p {
     will-change: transform, filter;
 }
 
-.footer .social-links img:hover,
-.footer .social-links a:focus img {
+.footer .social-links img:hover {
     transform: translateY(-3px) scale(1.08);
+    box-shadow: 0 0 20px rgba(90, 200, 255, 0.4), 0 0 40px rgba(43, 127, 255, 0.25), 0 10px 30px rgba(43, 127, 255, 0.2);
+    filter: drop-shadow(0 0 15px rgba(90, 200, 255, 0.35)) drop-shadow(0 6px 12px rgba(43, 127, 255, 0.2));
+}
+
+.footer .social-links a:focus img {
     box-shadow: 0 0 20px rgba(90, 200, 255, 0.4), 0 0 40px rgba(43, 127, 255, 0.25), 0 10px 30px rgba(43, 127, 255, 0.2);
     filter: drop-shadow(0 0 15px rgba(90, 200, 255, 0.35)) drop-shadow(0 6px 12px rgba(43, 127, 255, 0.2));
 }
